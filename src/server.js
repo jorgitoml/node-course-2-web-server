@@ -3,6 +3,7 @@ import hbs from 'hbs';
 import path from 'path';
 import fs from 'fs';
 
+const port = process.env.PORT || 3000;
 const app = express();
 
 hbs.registerPartials(path.join(__dirname, '/views/partials'));
@@ -57,6 +58,6 @@ app.get('/bad',(req,res)=>{
 
 
 
-app.listen(3000, ()=>{
-    console.log('Server is up and listening port 3000');
+app.listen(port, ()=>{
+    console.log(`Server is up and listening port ${port}`);
 });
